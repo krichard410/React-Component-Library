@@ -1,9 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import Container from "./componant/index"
+import Container from "../src/Component/index";
+import Rating from "../src/rating/index";
 
 const App = () => (
-  <Container />
+  <Container>
+    <Rating />
+  </Container>
 );
 
 

@@ -2,7 +2,7 @@ export const color = {
     white: '#FFF',
     black: '#0E0E0E',
     gray: '#D2D2D8',
-    purple: '#813CD7',
+    purple: '#DDA0DD',
     blue: '#1E50DA',
     orange: '#FE714B',
     orangeDark: '#E46407',
