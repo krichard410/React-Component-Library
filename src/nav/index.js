@@ -1,18 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import "../index.css";
 
 const NavBar = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 2.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 1rem 2rem 3rem 2rem;
   justify-content: center;
 `;
 
+const NavTitle = styled.h1`
+  color: palevioletred;
+`;
+
 const Nav = () => (
-  <NavBar />
+  <NavBar>
+    <NavTitle>Components Library</NavTitle>
+  </NavBar>
 );
 
 Nav.propTypes = {};
