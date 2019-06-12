@@ -8,8 +8,8 @@ export const color = {
     orangeDark: '#E46407',
     red: '#F00345',
     green: '#00C477',
-    yellow: '#FDD633',
-    papaya: '#b4968e',
+    yellow: '#ffeaa5',
+    papaya: '#ffefd5',
     lightTeal: '#d2f3e0',
     pink: '#feb9c8',
   };

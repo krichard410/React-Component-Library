@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import farm from "../agriculture.svg";
 import { color } from "../ui/theme";
 import "../index.css";
 
 const Title = styled.h3`
   font-size: 1.3rem;
   text-align: left;
-  color: palevioletred;
+  color: ${props => props.fontColor};
 `;
 
-const Component = styled.div`
+const Grid = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
@@ -18,25 +17,23 @@ const Component = styled.div`
   align-items: baseline;
   align-content: space-around;
   background: ${props => props.bgColor};
-  max-width: 40rem;
+  max-width: 12rem;
 `;
 
 //NOTE: this needs to be more flexible, less inline css
 //next few lines sets the default values for the Container const
-const Container = ({
+const colorGrid = ({
   backgroundColor = color.papaya,
-  title = "Component",
-  img = farm,
-  alt = "farm",
+  title,
+  fontColor,
   children
 }) => (
-  <Component bgColor={backgroundColor}>
-    <img src={img} style={{ width: 70, height: 70 }} alt={alt} />
-    <Title>{title}</Title>
+  <Grid bgColor={backgroundColor}>
+    <Title color={fontColor}>{title}</Title>
     {children}
-  </Component>
+  </Grid>
 );
 
-Container.propTypes = {};
+colorGrid.propTypes = {};
 
-export default Container;
+export default colorGrid;
