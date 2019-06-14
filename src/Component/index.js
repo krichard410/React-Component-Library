@@ -1,40 +1,51 @@
 import React from "react";
 import styled from "styled-components";
-import farm from "../agriculture.svg";
 import { color } from "../ui/theme";
 import "../index.css";
 
-const Title = styled.h3`
+export const Title = styled.h2`
   font-size: 1.3rem;
-  text-align: left;
   color: palevioletred;
+  margin-bottom: 0;
 `;
 
-const Component = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
-  align-content: space-around;
+export const Card = styled.div`
   background: ${props => props.bgColor};
-  max-width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 25rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: black;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  align-items: stretch;
 `;
 
-//NOTE: this needs to be more flexible, less inline css
-//next few lines sets the default values for the Container const
+export const Paragraph = styled.p`
+  font-size: 0.9rem;
+  margin-top: 0;
+`;
+
+export const Wrapper = styled.div`
+  flex-direction: column;
+  align-items: stretch;
+`;
+
 const Container = ({
   backgroundColor = color.papaya,
-  title = "Component",
-  img = farm,
-  alt = "farm",
+  title,
+  details,
   children
 }) => (
-  <Component bgColor={backgroundColor}>
-    <img src={img} style={{ width: 70, height: 70 }} alt={alt} />
-    <Title>{title}</Title>
-    {children}
-  </Component>
+  <Card bgColor={backgroundColor}>
+    <Wrapper>
+      <Title>{title}</Title>
+      <Paragraph>{details}</Paragraph>
+      {children}
+    </Wrapper>
+  </Card>
 );
 
 Container.propTypes = {};
