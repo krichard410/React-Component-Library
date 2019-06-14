@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import "../index.css";
 
 // Define our button, but with the use of props.theme this time
-const Button = styled.button`
+export const Button = styled.button`
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -22,15 +22,14 @@ Button.defaultProps = {
 }
 
 // Define what props.theme will look like
-const theme = {
+export const theme = {
   main: "mediumseagreen"
 };
 
 // eslint-disable-next-line no-undef
-render(
+export const Theme = () => (
   <div>
     <Button>Normal</Button>
-    {/*eslint-disable-next-line react/jsx-no-undef*/}
     <ThemeProvider theme={theme}>
       <Button>Themed</Button>
     </ThemeProvider>

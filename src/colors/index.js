@@ -3,21 +3,20 @@ import styled from "styled-components";
 import { color } from "../ui/theme";
 import "../index.css";
 
-const Title = styled.h3`
+export const ColorName = styled.h3`
   font-size: 1.3rem;
   text-align: left;
-  color: ${props => props.fontColor};
+  color: ${props => props.color};
+  background: ${props => props.bgColor};
+  justify-self: center;
 `;
 
-const Grid = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: baseline;
   align-content: space-around;
   background: ${props => props.bgColor};
-  max-width: 12rem;
 `;
 
 //NOTE: this needs to be more flexible, less inline css
@@ -25,11 +24,11 @@ const Grid = styled.div`
 const colorGrid = ({
   backgroundColor = color.papaya,
   title,
-  fontColor,
+  fontColor = color.white,
   children
 }) => (
   <Grid bgColor={backgroundColor}>
-    <Title color={fontColor}>{title}</Title>
+    <ColorName color={fontColor} bgColor={backgroundColor}>{title}</ColorName>
     {children}
   </Grid>
 );

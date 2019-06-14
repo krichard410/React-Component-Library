@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
+import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import Component from "../src/Component";
+import { Card, Title, Paragraph, Wrapper } from "../src/Component";
 import SwitchExample from "../src/toggle";
 import Rating from "../src/rating";
 import { color } from "../src/ui/theme";
@@ -8,81 +9,131 @@ import farm from "../src/agriculture.svg";
 import geo from "../src/geography.svg";
 import present from "../src/presentation.svg";
 import Form from "../src/hover";
-import styled from "styled-components";
 import Nav from "../src/nav";
-import Grid from "../src/colors";
-import Title from "../src/colors";
+import { Grid, ColorName } from "../src/colors";
+import { Theme } from "../src/button";
 
-//this should be bad practice
-const holder = styled.div``;
+const colorArray = Object.values(color);
+
+const StyledImage = styled.div`
+  padding: 0.5rem;
+`;
+
+const BigWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 storiesOf("Components", module)
   .add("Effects", () => (
-    <holder>
+    <Fragment>
       <Nav />
       <Form backgroundColor="papayawhip" title="Hover" />
       <Form backgroundColor={color.lightTeal} title="Hover" />
       <Form backgroundColor={color.yellow} title="Hover" />
-    </holder>
+    </Fragment>
   ))
   .add("Colors", () => (
-    <holder>
+    <Fragment>
       <Nav />
-      <Grid backgroundColor={color.black} title="Black">
-        <Title fontColor={color.white}/>
+      <Grid>
+        {colorArray.map(c => (
+          <ColorName fontColor={c} bgColor={c}>
+            Some Text
+          </ColorName>
+        ))}
       </Grid>
-    </holder>
+    </Fragment>
   ))
-  .add("Minimal Card", () => (
-    <holder>
-      <Nav />
-      <Component
-        backgroundColor={color.white}
-        img={geo}
-        alt="geo"
-        title="Minimalistic 🌮"
-      />
-    </holder>
+  .add("Theme", () => (
+    <Fragment>
+      <Theme />
+    </Fragment>
   ))
-  .add("Floral Card", () => (
-    <holder>
+  .add("Card Component", () => (
+    <Fragment>
       <Nav />
-      <Component
-        backgroundColor={color.lightTeal}
-        img={farm}
-        alt="farm"
-        title="Floral 🌮"
-      >
-        <p>Hi!</p>
-      </Component>
-    </holder>
-  ))
-  .add("Earthy Card", () => (
-    <holder>
-      <Nav />
-      <Component
-        backgroundColor={color.blue}
-        img={present}
-        alt="present"
-        title="Earthy 🌮"
-      />
-    </holder>
+      <BigWrapper>
+        <Wrapper style={{ paddingLeft: "15rem" }}>
+          <Card backgroundColor={color.white}>
+            <Wrapper>
+              <StyledImage>
+                <img src={geo} style={{ width: 70, height: 70 }} alt={Title} />
+              </StyledImage>
+            </Wrapper>
+            <Wrapper>
+              <Paragraph>
+                So here is some text I've placed. Here is some more too.
+              </Paragraph>
+            </Wrapper>
+          </Card>
+          <Card backgroundColor={color.white}>
+            <Wrapper>
+              <StyledImage>
+                <img src={farm} style={{ width: 70, height: 70 }} alt={Title} />
+              </StyledImage>
+            </Wrapper>
+            <Wrapper>
+              <Title>Some Card</Title>
+              <Paragraph>So here is some text I've placed</Paragraph>
+            </Wrapper>
+          </Card>
+          <Card backgroundColor={color.white}>
+            <Wrapper>
+              <StyledImage>
+                <img
+                  src={present}
+                  style={{ width: 70, height: 70 }}
+                  alt={Title}
+                />
+              </StyledImage>
+            </Wrapper>
+            <Wrapper>
+              <Title>Some Card</Title>
+              <Paragraph>
+                <ul>
+                  <li>Some text</li>
+                  <li>Some more</li>
+                  <li>And some</li>
+                </ul>
+              </Paragraph>
+            </Wrapper>
+          </Card>
+          <Card backgroundColor={color.white}>
+            <Wrapper>
+              <Title>Some Card</Title>
+              <Paragraph>So here is some text I've placed</Paragraph>
+            </Wrapper>
+            <Wrapper>
+              <StyledImage>
+                <img src={geo} style={{ width: 70, height: 70 }} alt={Title} />
+              </StyledImage>
+            </Wrapper>
+          </Card>
+        </Wrapper>
+        <Wrapper style={{ paddingLeft: "15rem" }}>
+          <SwitchExample />
+          <SwitchExample />
+          <Rating />
+        </Wrapper>
+      </BigWrapper>
+    </Fragment>
   ))
   .add("Toggle", () => (
-    <holder>
+    <Fragment>
       <Nav />
       <SwitchExample />
-    </holder>
+    </Fragment>
   ))
   .add("Switch", () => (
-    <holder>
+    <Fragment>
       <Nav />
       <SwitchExample title="Switch" />
-    </holder>
+    </Fragment>
   ))
   .add("Rating", () => (
-    <holder>
+    <Fragment>
       <Nav />
       <Rating />
-    </holder>
+    </Fragment>
   ));
