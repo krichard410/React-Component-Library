@@ -17,9 +17,9 @@ export const Button = styled.button`
 // We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
 Button.defaultProps = {
   theme: {
-    main: "palevioletred"
+    main: "green"
   }
-}
+};
 
 // Define what props.theme will look like
 export const theme = {

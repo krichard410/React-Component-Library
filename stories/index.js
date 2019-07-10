@@ -58,12 +58,12 @@ storiesOf("Components", module)
           <Card backgroundColor={color.white}>
             <Wrapper>
               <StyledImage>
-                <img src={geo} style={{ width: 70, height: 70 }} alt={Title} />
+                <img src={geo} style={{ width: 70, height: 70 }} alt="geo" />
               </StyledImage>
             </Wrapper>
             <Wrapper>
               <Paragraph>
-                So here is some text I've placed. Here is some more too.
+                So here is some text I've placed. Here is some more too. And another sentence here. 
               </Paragraph>
             </Wrapper>
           </Card>
@@ -74,7 +74,7 @@ storiesOf("Components", module)
               </StyledImage>
             </Wrapper>
             <Wrapper>
-              <Title>Some Card</Title>
+              <Title>Farm Card</Title>
               <Paragraph>So here is some text I've placed</Paragraph>
             </Wrapper>
           </Card>
@@ -89,7 +89,7 @@ storiesOf("Components", module)
               </StyledImage>
             </Wrapper>
             <Wrapper>
-              <Title>Some Card</Title>
+              <Title>Present Card</Title>
               <Paragraph>
                 <ul>
                   <li>Some text</li>
@@ -101,7 +101,7 @@ storiesOf("Components", module)
           </Card>
           <Card backgroundColor={color.white}>
             <Wrapper>
-              <Title>Some Card</Title>
+              <Title>Geography Card</Title>
               <Paragraph>So here is some text I've placed</Paragraph>
             </Wrapper>
             <Wrapper>
