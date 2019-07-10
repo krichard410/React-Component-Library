@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import "../index.css";
 
 const NavBar = styled.div`
@@ -8,15 +8,17 @@ const NavBar = styled.div`
   flex-wrap: wrap;
   padding: 1rem 2rem 3rem 2rem;
   justify-content: center;
+  align-items: center;
 `;
 
-const NavTitle = styled.h1`
-  color: palevioletred;
+export const NavTitle = styled.h1`
+  margin-bottom: 3rem;
+  color: white;
 `;
 
-const Nav = () => (
+const Nav = title => (
   <NavBar>
-    <NavTitle>Components Library</NavTitle>
+    <NavTitle>{title}</NavTitle>
   </NavBar>
 );
 

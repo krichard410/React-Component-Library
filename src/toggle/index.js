@@ -17,7 +17,7 @@ class SwitchExample extends React.Component {
         const {title="Toggle:"} = this.props;
       return (
         <label>
-          <h2 style={{ fontSize: 25 }}>{title}</h2>
+          <h2 style={{ fontSize: 20 }}>{title}</h2>
           <Switch onChange={this.handleChange} checked={this.state.checked} />
         </label>
       );

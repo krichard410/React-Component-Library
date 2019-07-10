@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Input = styled.input`
   padding: 1rem;
-  margin: 2rem;
   color: palevioletred;
   background: ${props => props.bgColor};
   border: none;
@@ -22,13 +21,13 @@ class Form extends React.Component {
   }
 
   render() {
-    const {backgroundColor = "papayawhip"} = this.props;
-    const {title = "Hover"} = this.props;
+    const { backgroundColor = "white" } = this.props;
+    const { title = "Hover" } = this.props;
     return (
       <Input
         title={title}
         ref={this.inputRef}
-        placeholder="Hover to focus!"
+        placeholder="Email!"
         onMouseEnter={() => {
           this.inputRef.current.focus();
         }}
