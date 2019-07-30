@@ -15,6 +15,14 @@ export const color = {
   darkPurple: "#2d3561"
 };
 
+export const font = {
+  default: `-apple-system,
+  BlinkMacSystemFont,
+  'Coolvetica-Regular',
+  `
+};
+
 export default {
-  color
+  color,
+  font
 };

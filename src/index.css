@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif|EB+Garamond|Homemade+Apple|Pacifico|Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css?family=PT+Serif|EB+Garamond|Homemade+Apple|Pacifico|Sacramento&display=swap");
 
 body {
   margin: 0;
@@ -14,23 +14,26 @@ code {
     monospace;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 40px;
-  font-family: 'PT Serif', serif;
+  font-family: "Coolvetica", sans-serif;
 }
 
-h3, h4 {
-  font-family: 'Homemade Apple', cursive;
+h3,
+h4 {
+  font-family: "Homemade Apple", cursive;
 }
 
-h5, h6{
-  font-family: 'Sacramento', cursive;
+h5,
+h6 {
+  font-family: "Sacramento", cursive;
 }
 
 p {
   font-size: 18px;
   display: inline-block;
-  font-family: 'EB Garamond', serif;
+  font-family: "EB Garamond", serif;
 }
 
 .container {
@@ -44,7 +47,7 @@ p {
   width: 100%;
   overflow: hidden;
   user-select: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
