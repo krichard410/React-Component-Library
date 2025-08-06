@@ -7,7 +7,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-motion": "^0.5.2",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-spring": "^8.0.25",
     "react-star-rating-component": "^1.4.1",
     "react-switch": "^5.0.0",
@@ -36,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react": "^5.1.1"
+    "@storybook/react": "^9.1.1"
   }
 }
